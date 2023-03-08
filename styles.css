@@ -4,18 +4,94 @@
     box-sizing: border-box;
 }
 
+:root {
+    --creepy-font: "Creepster", cursive;
+    --bloody-font: 'Nosifer', cursive;
+}
+
 body {
     margin: 0;
-
 }
 
 .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url(/images/wallpaper-bg.png);
-    background-repeat: no-repeat;
-    background-clip: border-box;
-    opacity: 0.7;
-    filter: blur(3px);
 }
 
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url(/images/1026143.jpg);
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-size: cover;
+    opacity: 0.7;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.game-title {
+    font-size: 5rem;
+    color: orangered;
+    letter-spacing: 1rem;
+    font-family: var(--creepy-font);
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.header h2 {
+    font-size: 2rem;
+    margin: 0 auto;
+}
+
+.card-wrapper {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 30px 20px;
+    
+}
+
+.cards {
+    width: 150px;
+    height: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: url(/images/19687894cd448bcc0d40f5b28911fbe893bc32d307b4c80a2f5818e6a09210be.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-clip: border-box;
+}
+
+.card-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-family: var(--bloody-font);
+    color: darkred;
+    font-size: 2rem;
+}
+
+.card-header h4 {
+    margin: 0;
+}
+
+.card-header h4 span {
+    margin-left: 1rem;
+}
