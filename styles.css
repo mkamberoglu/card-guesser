@@ -7,6 +7,8 @@
 :root {
     --creepy-font: "Creepster", cursive;
     --bloody-font: 'Nosifer', cursive;
+    --card-size-h: 200px;
+    --card-size-w: 140px;
 }
 
 body {
@@ -22,6 +24,7 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
 
 .container::before {
     content: "";
@@ -68,15 +71,49 @@ body {
 }
 
 .cards {
-    width: 150px;
-    height: 200px;
+    width: var(--card-size-w);
+    height: var(--card-size-h);
     border-radius: 5px;
     cursor: pointer;
-    background-image: url(/images/19687894cd448bcc0d40f5b28911fbe893bc32d307b4c80a2f5818e6a09210be.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-clip: border-box;
+    background-color: #FF9826;
+    border: 5px solid #6a251e;
+    position: relative;
+    box-shadow: 5px 5px 5px 1px maroon;
+    
 }
+
+.back {
+    background-image: url(/images/cardimg.jpg);
+    background-size: 100px 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
+.cards::after {
+    position: absolute;
+    content: "";
+    width: calc(var(--card-size-w) * 0.75);
+    height: calc(var(--card-size-h) * 0.8);
+    border: 3px #6a251e;
+   /*  background: linear-gradient(45deg, #6a251e, #fffe70); */
+    border-style: solid;
+    top: 15px;
+    left: 12px;
+}
+
+.cards::before {
+    position: absolute;
+    content: "";
+    width: calc(var(--card-size-w) * 0.9);
+    height: calc(var(--card-size-h) * 0.9);
+    border: 5px #fffe70;
+    border-style: double;
+    top: 5px;
+    left: 2px;
+
+}
+
 
 .card-header {
     grid-column: 1 / -1;
