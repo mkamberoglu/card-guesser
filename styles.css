@@ -1,0 +1,11 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --spooky-font: 'Nosifer', cursive; 
+    --creepy-font: 'Creepster', cursive; 
+}
+
