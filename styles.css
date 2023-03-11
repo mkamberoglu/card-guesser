@@ -132,6 +132,10 @@ body {
     transform: rotateY(180deg);
 }
 
+.reverse-flip {
+    transform: rotateY(180deg);
+}
+
 .wrapper {
     margin-top: 12px;
     width: auto;
@@ -182,7 +186,9 @@ body {
 }
 
 .front {
-    transform: rotateY(180deg);   
+    transform: rotateY(180deg);
+    border-radius: 10px;
+    background-color: yellow;   
 }
 
 .back:hover {
