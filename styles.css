@@ -9,3 +9,54 @@
     --creepy-font: 'Creepster', cursive; 
 }
 
+body {
+    margin: 0;
+    position: relative;
+}
+
+
+.visibility {
+    display: none;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #2C3333, #2E4F4F);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+}
+
+.header-sec {
+    margin-top: 20px;
+    text-align: center;
+    font-family: var(--spooky-font);
+    color: crimson;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+}
+
+.header-sec * {
+    margin: 0; 
+}
+
+.card-title {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 3rem;
+    color: white;
+    font-family: var(--creepy-font);
+}
+
+.card-title span {
+    margin-left: 15px;
+}
+
+.card-title * {
+     margin-top: 20px;
+} 
+
