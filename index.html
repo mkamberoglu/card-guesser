@@ -25,18 +25,18 @@
 
 <body>
     <!-- Opening Popup -->
-    <div class="opening visibility">
+    <div class="opening">
         <div class="popup">
             <div class="pop-title">
                 <h3>Welcome to the card guesser game</h3>
             </div>
             <p>If you want to win, you have to find the matches three times. Be careful there is a countdown which
-                starts from 100.</p>
-            <button class="start-btn">START</button>
+                starts from 60.</p>
+            <button class="start-btn" id="start-btn">START</button>
         </div>
     </div>
     <!-- Game Container -->
-    <div class="container">
+    <div class="container pop">
         <!-- Game Header -->
         <div class="header-sec">
             <h1>Card Guesser Game</h2>
@@ -44,88 +44,88 @@
         <!-- Card Section Header -->
         <div class="card-title">
             <div class="timer">
-                <p>TIMER:<span class="left-time">100</span></p>
+                <p>TIMER:<span class="left-time" id="left-time">60</span></p>
             </div>
             <div class="guess-left">
-                <p>GUESS LEFT:<span class="guess-count">3</span></p>
+                <p>GUESS LEFT:<span class="guess-count" id="guess-count">3</span></p>
             </div>
         </div>
         <!-- Cards Wrapper -->
         <div class="wrapper">
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
             <div class="card">
                 <div class="front"></div>
-                <div class="back"></div>
+                <div class="back dis"></div>
             </div>
         </div>
     </div>
     <!-- Result Popup -->
-    <div class="closing visibility">
+    <div class="closing visibility" id="closing">
         <div class="popup">
             <div class="pop-title">
-                <h3 class="result-title">YOU WIN!</h3>
+                <h3 class="result-title" id="result-title"></h3>
             </div>
             <p>If you want to play again click the button!</p>
-            <button class="restart-btn">Restart</button>
+            <button class="restart-btn" id="restart-btn">Restart</button>
         </div>
     </div>
 </body>

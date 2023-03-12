@@ -160,17 +160,17 @@ body {
     color: white;
     transition: all 500ms linear;
     transform-style: preserve-3d;
-    cursor: pointer; 
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center; 
+    cursor: pointer;   
 } 
 
 .front,
 .back {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100%;     
 } 
 
 .back {
@@ -181,16 +181,64 @@ body {
     border-radius: 10px;
     background-position: center;
     border: 5px double black;
-    transition: all 0.5s ease;
-    
+    transition: all 0.5s ease;   
 }
+
+.bee,
+.owl,
+.bird,
+.cat,
+.dog,
+.squirrel,
+.horse,
+.rabbit {
+    background-position: center;
+    background-size: 95% 95%;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+}
+
+.owl {
+    background-image: url(/images/owl.jpg);
+}
+.bee {
+    background-image: url(/images/bee.jpg);
+}
+.cat {
+    background-image: url(/images/cat.jpg);
+}
+.dog {
+    background-image: url(/images/dog.jpg);
+}
+.horse {
+    background-image: url(/images/horse.jpg);
+}
+.rabbit {
+    background-image: url(/images/rabbit.jpg);
+}
+.bird {
+    background-image: url(/images/bird.jpg);
+}
+.squirrel {
+    background-image: url(/images/squirrel.jpg);
+}
+
+
 
 .front {
     transform: rotateY(180deg);
-    border-radius: 10px;
-    background-color: yellow;   
+    border-radius: 20px;
 }
 
 .back:hover {
     box-shadow: 0 0 20px 10px #fffe70;
 }
+
+.dis:hover {
+    box-shadow: none !important;
+}
+
+.dis {
+    cursor: not-allowed !important;
+}
+
