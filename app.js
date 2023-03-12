@@ -13,30 +13,13 @@ const timer = document.getElementById("left-time");
 const guessRight = document.getElementById("guess-count");
 const resultTitle = document.getElementById("result-title") 
 
-let mInterval;
-
 
 const gameHandler = function() {
-    let count = 0;
-
-    console.log(count);
-    
-    cards.forEach(item => item.classList[1] === "flip" ? count++ : count+= 0); 
-    
-    
-   
-    if (count === 1) {
-        mInterval = setInterval(function() {
-            cards.forEach(item => item.classList.remove("flip"));
-        }, 2000);
-
-    } else {
-        clearInterval(mInterval);
-    } 
+    cards.forEach(item => item.classList.remove("flip"));
+    cards.forEach(item => item.addEventListener("click", cardClicked));
 }
 
-cards.forEach(item => item.addEventListener("click", gameHandler));
-
+   
 const cardShuffler = function() {
     const animalArr = ["cat", "dog", "horse", "squirrel", "bee", "owl", "bird", "rabbit", "cat", "dog", "horse", "squirrel", "bee", "owl", "bird", "rabbit"];
 
@@ -79,12 +62,19 @@ const gameStart = function() {
 }
 
 const cardClicked = function(e) {    
+    let count = 0;
     const cardSide = e.target.classList[0];
     const cardParent = e.target.parentElement.classList;
     if (cardSide === "back") {
         cardParent.add("flip");
     } else if (cardSide === "front") {
         cardParent.remove("flip")
+    }
+    cards.forEach(item => item.classList[1] === "flip" ? count++ : count+= 0); 
+    
+    if (count === 2) {
+        cards.forEach(item => item.removeEventListener("click", cardClicked));
+        setTimeout(gameHandler, 2000);
     }   
 }
    
