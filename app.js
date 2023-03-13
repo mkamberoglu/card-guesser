@@ -11,58 +11,81 @@ const closingPop = document.getElementById("closing");
 const cardsBack = document.querySelectorAll(".back");
 const timer = document.getElementById("left-time");
 const guessRight = document.getElementById("guess-count");
-const resultTitle = document.getElementById("result-title") 
+const resultTitle = document.getElementById("result-title")
 
 
-const gameHandler = function() {
+
+const gameHandler = function () {
     cards.forEach(item => item.classList.remove("flip"));
     cards.forEach(item => item.addEventListener("click", cardClicked));
     cardsBack.forEach(item => item.classList.remove("dis"));
 }
 
-   
-const cardShuffler = function() {
+
+const cardShuffler = function () {
     const animalArr = ["cat", "dog", "horse", "squirrel", "bee", "owl", "bird", "rabbit", "cat", "dog", "horse", "squirrel", "bee", "owl", "bird", "rabbit"];
 
     const arr = [];
     while (arr.length < 16) {
-    const num = Math.floor(Math.random() * 16);
-    if (arr.indexOf(num) === -1) {
-        arr.push(num);
+        const num = Math.floor(Math.random() * 16);
+        if (arr.indexOf(num) === -1) {
+            arr.push(num);
         }
     };
 
     for (let i = 0; i < arr.length; i++) {
-        cardsFront[i].classList.add(animalArr[arr[i]]); 
-    }   
+        cardsFront[i].classList.add(animalArr[arr[i]]);
+    }
 }
 
-/* const timerHandler = function() {
+const timerHandler = function () {
     let timeleft = 60;
-    let downloadTimer = setInterval(function(){
+    let downloadTimer = setInterval(function () {
         timeleft--;
         timer.innerText = timeleft;
         if (timeleft <= 0) {
             clearInterval(downloadTimer);
             resultTitle.innerText = "YOU LOST!"
             gameEnd();
+        } else if (guessRight.innerText === "0") {
+            clearInterval(downloadTimer);
         }
     }, 1000)
-} */
+}
 
-const gameStart = function() {
+const gameStart = function () {
     openingPop.classList.add("visibility");
     container.classList.remove("pop");
     closingPop.classList.add("visibility");
     cardsBack.forEach(item => {
         item.classList.remove("dis");
     })
+    cards.forEach(item => {
+        item.classList.remove("flip");
+        item.classList.remove("liftup");
+    }); 
+    guessRight.innerText = "3";   
     cardShuffler();
     timerHandler();
 
 }
 
-const cardClicked = function(e) {    
+const winningSit = function () {
+    let guessCount = parseInt(guessRight.innerText);
+    guessCount--;
+    console.log(guessCount)
+    guessRight.innerText = guessCount;
+    cardsBack.forEach(item => item.classList.remove("dis"));
+    cards.forEach(item => item.addEventListener("click", cardClicked));
+
+    if (guessCount === 0) {
+        resultTitle.innerText = "YOU WIN!"
+        gameEnd();
+    }
+
+}
+
+const cardClicked = function (e) {
     let count = 0;
     const cardSide = e.target.classList[0];
     const cardParent = e.target.parentElement.classList;
@@ -71,31 +94,50 @@ const cardClicked = function(e) {
     } else if (cardSide === "front") {
         cardParent.remove("flip")
     }
-    cards.forEach(item => item.classList[1] === "flip" ? count++ : count+= 0); 
-    
-    if (count === 2) {
+    cards.forEach(item => item.classList[1] === "flip" ? count++ : count += 0);
+    if (count % 2 === 0) {
         cardsBack.forEach(item => item.classList.add("dis"));
         cards.forEach(item => item.removeEventListener("click", cardClicked));
-        setTimeout(gameHandler, 2000);
-    }   
-}
-   
+        const myArr = [];
+        cards.forEach(item => {
+            if (item.classList[1] === "flip") {
+                myArr.push(item.firstElementChild.classList[1]);
+            }
+        });
+        if (myArr[0] === myArr[1]) {
+            setTimeout(winningSit, 2000);
+            setTimeout(function () {
+                cards.forEach(item => {
+                    if (item.classList[1] === "flip") {
+                        item.classList.add("liftup");
+                    }
+                });
+            }, 2000);
+        } else {
+            setTimeout(gameHandler, 2000);
+        }
 
-const flipHandler = function() {
+    }
+}
+
+const flipHandler = function () {
     cards.forEach(item => item.addEventListener("click", cardClicked));
-    
+
 }
 
-flipHandler(); 
+flipHandler();
 
 
-const gameEnd = function(){
+
+
+
+const gameEnd = function () {
     closingPop.classList.remove("visibility");
     container.classList.add("pop");
     cardsBack.forEach(item => {
         item.classList.add("dis");
     })
-} 
+}
 
 startBtn.addEventListener("click", gameStart)
 restartBtn.addEventListener("click", gameStart)
