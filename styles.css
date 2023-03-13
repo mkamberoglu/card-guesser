@@ -251,4 +251,60 @@ body {
     transition: transform 2s ease-in-out;
 }
 
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.logo-container {
+    color: #fffe70;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;   
+}
+
+
+.advo {
+    font-family: 'Atomic Age', cursive;
+    margin-bottom: 5px;
+    
+}
+
+.front-end {
+    font-family: 'Yellowtail', cursive;
+    border-top: 2px solid crimson;
+    padding-top: 5px;
+}
+
+.social-list {
+    margin-right: 20px;
+    margin-top: 25px;
+}
+
+.socials {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+a {
+    color: #fffe70;
+    font-size: 2.2rem;
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
+
 

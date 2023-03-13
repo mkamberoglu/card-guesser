@@ -21,6 +21,16 @@
 
     <!-- Website Icon -->
     <link rel="icon" href="/images/icon.svg">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atomic+Age&family=Yellowtail&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -37,6 +47,23 @@
     </div>
     <!-- Game Container -->
     <div class="container pop">
+        <!-- NavBar -->
+        <div class="navbar">
+            <div class="logo-container">
+                <span class="advo">advøcate</span>
+                <span class="front-end">Front-End Developer</span>
+            </div>
+            <div class="social-list">
+                <ul class="socials">
+                    <li class="list-item"><a href="https://www.instagram.com/m.kamberoglu/?igshid=ZDdkNTZiNTM%3D" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a></li>
+                    <li class="list-item"><a href="https://github.com/mkamberoglu" target="_blank"><i
+                                class="fa-brands fa-github"></i></a></li>
+                    <li class="list-item"><a href="https://www.linkedin.com/in/melih-k/" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
         <!-- Game Header -->
         <div class="header-sec">
             <h1>Card Guesser Game</h2>
@@ -47,7 +74,7 @@
                 <p>TIMER:<span class="left-time" id="left-time">60</span></p>
             </div>
             <div class="guess-left">
-                <p>GUESS LEFT:<span class="guess-count" id="guess-count">3</span></p>
+                <p>MATCH LEFT:<span class="guess-count" id="guess-count">3</span></p>
             </div>
         </div>
         <!-- Cards Wrapper -->
