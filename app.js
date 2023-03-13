@@ -17,6 +17,7 @@ const resultTitle = document.getElementById("result-title")
 const gameHandler = function() {
     cards.forEach(item => item.classList.remove("flip"));
     cards.forEach(item => item.addEventListener("click", cardClicked));
+    cardsBack.forEach(item => item.classList.remove("dis"));
 }
 
    
@@ -36,7 +37,7 @@ const cardShuffler = function() {
     }   
 }
 
-const timerHandler = function() {
+/* const timerHandler = function() {
     let timeleft = 60;
     let downloadTimer = setInterval(function(){
         timeleft--;
@@ -47,7 +48,7 @@ const timerHandler = function() {
             gameEnd();
         }
     }, 1000)
-}
+} */
 
 const gameStart = function() {
     openingPop.classList.add("visibility");
@@ -73,6 +74,7 @@ const cardClicked = function(e) {
     cards.forEach(item => item.classList[1] === "flip" ? count++ : count+= 0); 
     
     if (count === 2) {
+        cardsBack.forEach(item => item.classList.add("dis"));
         cards.forEach(item => item.removeEventListener("click", cardClicked));
         setTimeout(gameHandler, 2000);
     }   

@@ -152,6 +152,8 @@ body {
 
 }
 
+
+
 .card {
     margin: 0 auto;
     position: relative;
@@ -230,8 +232,10 @@ body {
     border-radius: 20px;
 }
 
+
 .back:hover {
     box-shadow: 0 0 20px 10px #fffe70;
+    
 }
 
 .dis:hover {
@@ -241,4 +245,10 @@ body {
 .dis {
     cursor: not-allowed !important;
 }
+
+.liftup {
+    transform: translateY(-1000px);
+    transition: transform 2s ease-in-out;
+}
+
 
