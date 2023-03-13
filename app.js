@@ -112,16 +112,16 @@ const cardClicked = function (e) {
         });
         console.log(myArr)
         if (myArr[1] !== undefined && myArr[0] === myArr[1]) {
-            setTimeout(winningSit, 2000);
+            setTimeout(winningSit, 1000);
             setTimeout(function () {
                 cards.forEach(item => {
                     if (item.classList[1] === "flip") {
                         item.classList.add("liftup");
                     }
                 });
-            }, 2000);
+            }, 1000);
         } else {
-            setTimeout(gameHandler, 2000);
+            setTimeout(gameHandler, 1000);
         }
     }
 }
