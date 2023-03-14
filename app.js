@@ -41,7 +41,6 @@ const cardShuffler = function () {
     
     cardsFront.forEach(item => item.classList.value = "front");
     cardsFront.forEach((item,index) => item.classList.add(shuffledArray[index]));
-    cardsFront.forEach((item,index) => console.log(item.classList));
 }
 
 
@@ -110,7 +109,6 @@ const cardClicked = function (e) {
                 myArr.push(item.firstElementChild.classList[1]);
             }
         });
-        console.log(myArr)
         if (myArr[1] !== undefined && myArr[0] === myArr[1]) {
             setTimeout(winningSit, 1000);
             setTimeout(function () {
